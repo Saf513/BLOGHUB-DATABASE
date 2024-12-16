@@ -81,6 +81,16 @@ CREATE TABLE article_likes (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
+--CREATION DE TABLE DE KEY WORD POUR ARTICLE
+
+CREATE TABLE article_keywords (
+    article_id INT NOT NULL,
+    keyword VARCHAR(100) NOT NULL,
+    PRIMARY KEY (article_id, keyword),
+    FOREIGN KEY (article_id) REFERENCES articles(id) ON DELETE CASCADE
+);
+
+
 --INSERTIONS DES USERS 
 
 INSERT INTO users (username, email, password, role) 
